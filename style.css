@@ -46,6 +46,10 @@ li:hover a {
 	color: #FFBA15;
 }
 
+a.active{
+   background-color:#FFBA15;
+   text-decoration: bold;
+}
 /*----text stuff----*/
 h1{
 font-size: 30pt;
