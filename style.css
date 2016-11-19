@@ -6,6 +6,9 @@ font-family: "helvetica neue";
 font-size: 11pt;
 }
 
+header{
+   padding-bottom: 60px;
+}
 /*-----MENU-------*/
 
 #mainmenu{
@@ -70,5 +73,5 @@ outline: 0;
 
 .images{
 width:98%;
-padding-top:60px;
+padding-top:10px;
 }
