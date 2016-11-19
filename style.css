@@ -37,7 +37,7 @@ ul {
 /*Style for menu links*/
 li a {
 	color: #000;
-   display: block;
+   display: inline;
 	text-decoration: none;
 }
 
@@ -46,10 +46,15 @@ li:hover a {
 	color: #FFBA15;
 }
 
-a.active{
+.active{
    background-color:#FFBA15;
    text-decoration: bold;
 }
+
+.active:hover{
+  color: black;
+}
+
 /*----text stuff----*/
 h1{
 font-size: 30pt;
