@@ -9,7 +9,7 @@ var oNum = 0;
 var wNum = 0;
 
 function setup() {
-	var canvas = createCanvas(windowWidth, (2(windowHeight/3)));
+	var canvas = createCanvas(windowWidth, 2*(windowHeight/3));
 	canvas.parent('sketch-holder'); // put sketch inside 'sketch-holder' div
 	background(255);
 	setInterval(chooseChange, 800); // change a word every 8 millisecs
