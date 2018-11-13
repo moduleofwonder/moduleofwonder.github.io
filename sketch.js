@@ -9,7 +9,8 @@ var oNum = 0;
 var wNum = 0;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	var canvas = createCanvas(windowWidth, 2(windowHeight/3));
+	canvas.parent('sketch-holder'); // put sketch inside 'sketch-holder' div
 	background(255);
 	setInterval(chooseChange, 800); // change a word every 8 millisecs
 	setInterval(MOW, 20000); // show "mow" every 2 secs
