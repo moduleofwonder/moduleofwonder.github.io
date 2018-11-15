@@ -14,7 +14,7 @@ function setup() {
 	canvasWidth = windowWidth;
 	var canvas = createCanvas(canvasWidth, canvasHeight);
 	canvas.parent('sketch-holder'); // put sketch inside 'sketch-holder' div
-	fontSize = canvasWidth/25;
+	fontSize = canvasWidth/24;
 	background(255);
 	setInterval(chooseChange, 1000); // change a word every second
 	setInterval(MOW, 20000); // show "mow" every 2 minutes(?)
@@ -78,7 +78,7 @@ function draw() {
 
 function windowResized() {
 	canvasWidth = windowWidth;
-	fontSize = canvasWidth/25;
+	fontSize = canvasWidth/24;
 	resizeCanvas(canvasWidth, canvasHeight);
 	textSize(fontSize);
 }
