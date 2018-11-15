@@ -8,17 +8,25 @@ var mNum = 0;
 var oNum = 0;
 var wNum = 0;
 var canvasHeight, canvasWidth, fontSize; 
+var spacingM, spacingO, spacingW;
 
 function setup() {
-	canvasHeight = 50;
+	canvasHeight = 50;//windowHeight/10;
 	canvasWidth = windowWidth;
 	var canvas = createCanvas(canvasWidth, canvasHeight);
 	canvas.parent('sketch-holder'); // put sketch inside 'sketch-holder' div
-	if (windowWidth < windowHeight){ // for mobile
-		canvasWidth = windowWidth+(windowWidth/2);
+	if (windowWidth < windowHeight){
+		spacingW = windowWidth-40;
+		spacingO = (windowWidth/2)-20;
+		canvasWidth = windowWidth*2;
 	}
-	fontSize = canvasWidth/24;
+	else{
+		spacingO = canvasWidth/4;
+		spacingW = canvasWidth/2;
+	}
+	fontSize = canvasWidth/28;
 	background(255);
+	spacingM = 0;
 	setInterval(chooseChange, 1000); // change a word every second
 	setInterval(MOW, 20000); // show "mow" every 2 minutes(?)
 	textFont('Arial');
@@ -72,21 +80,25 @@ function draw() {
 	o = oArray[oNum];
 	w = wArray[wNum];
 	textAlign(LEFT);
-	text(m, 0, canvasHeight-10);
+	text(m, spacingM, canvasHeight-10);//text(m, canvasWidth/2-100, canvasHeight/2);
 	textAlign(CENTER);
-	text(o, canvasWidth/4, canvasHeight-10);
+	text(o, spacingO, canvasHeight-10);//text(o, canvasWidth/2, canvasHeight/2);
 	textAlign(RIGHT);
-	text(w, canvasWidth/2, canvasHeight-10);
+	text(w, spacingW, canvasHeight-10);//text(w, canvasWidth/2+100, canvasHeight/2);
 }
 
 function windowResized() {
-	if (windowWidth < windowHeight){ // for mobile
-		canvasWidth = windowWidth+(windowWidth/2);
+	if (windowWidth < windowHeight){
+		spacingW = windowWidth-40;
+		spacingO = (windowWidth/2)-20;
+		canvasWidth = windowWidth*2;
 	}
 	else{
 		canvasWidth = windowWidth;	
 		resizeCanvas(canvasWidth, canvasHeight);
+		spacingO = canvasWidth/4;
+		spacingW = canvasWidth/2;
 	}
-	fontSize = canvasWidth/24;
+	fontSize = canvasWidth/28;
 	textSize(fontSize);
 }
