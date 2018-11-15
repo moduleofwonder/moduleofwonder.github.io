@@ -18,7 +18,7 @@ function setup() {
 	if (windowWidth < windowHeight){
 		spacingW = windowWidth-40;
 		spacingO = (windowWidth/2)-20;
-		canvasWidth = windowWidth*2;
+		canvasWidth = windowWidth+(windowWidth/2);
 	}
 	else{
 		spacingO = canvasWidth/4;
@@ -91,7 +91,7 @@ function windowResized() {
 	if (windowWidth < windowHeight){
 		spacingW = windowWidth-40;
 		spacingO = (windowWidth/2)-20;
-		canvasWidth = windowWidth*2;
+		canvasWidth = windowWidth+(windowWidth/2);
 	}
 	else{
 		canvasWidth = windowWidth;	
