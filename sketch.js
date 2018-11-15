@@ -62,7 +62,7 @@ function draw() {
 	o = oArray[oNum];
 	w = wArray[wNum];
 	textFont('Arial');
-	textSize(50);
+	textSize(30);
 	fill(255, 186, 21);
 	textAlign(RIGHT);
 	text(m, windowWidth/2-100, windowHeight/2);
