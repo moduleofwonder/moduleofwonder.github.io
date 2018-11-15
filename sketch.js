@@ -7,13 +7,20 @@ var w = 'wonder';
 var mNum = 0;
 var oNum = 0;
 var wNum = 0;
+var canvasHeight;
+var canvasWidth; 
 
 function setup() {
-	var canvas = createCanvas(windowWidth, windowHeight/4);
+	canvasHeight = 50;
+	canvasWidth = windowWidth;
+	var canvas = createCanvas(canvasWidth, canvasHeight);
 	canvas.parent('sketch-holder'); // put sketch inside 'sketch-holder' div
 	background(255);
-	setInterval(chooseChange, 800); // change a word every 8 millisecs
-	setInterval(MOW, 20000); // show "mow" every 2 secs
+	setInterval(chooseChange, 1000); // change a word every second
+	setInterval(MOW, 20000); // show "mow" every 2 minutes(?)
+	textFont('Arial');
+	textSize(40);
+	fill(255, 186, 21);
 }
 
 // random number chooses which word gets changed
@@ -61,17 +68,15 @@ function draw() {
 	m = mArray[mNum];
 	o = oArray[oNum];
 	w = wArray[wNum];
-	textFont('Arial');
-	textSize(14);
-	fill(255, 186, 21);
-	textAlign(RIGHT);
-	text(m, windowWidth/2-100, windowHeight/2);
-	textAlign(CENTER);
-	text(o, windowWidth/2, windowHeight/2);
 	textAlign(LEFT);
-	text(w, windowWidth/2+100, windowHeight/2);
+	text(m, 0, canvasHeight-10);//text(m, canvasWidth/2-100, canvasHeight/2);
+	textAlign(CENTER);
+	text(o, 270, canvasHeight-10);//text(o, canvasWidth/2, canvasHeight/2);
+	textAlign(RIGHT);
+	text(w, 540, canvasHeight-10);//text(w, canvasWidth/2+100, canvasHeight/2);
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+	canvasWidth = windowWidth;
+  	resizeCanvas(canvasWidth, canvasHeight);
 }
