@@ -14,6 +14,9 @@ function setup() {
 	canvasWidth = windowWidth;
 	var canvas = createCanvas(canvasWidth, canvasHeight);
 	canvas.parent('sketch-holder'); // put sketch inside 'sketch-holder' div
+	if (windowWidth < windowHeight){ // for mobile
+		canvasWidth = windowWidth+(windowWidth/2);
+	}
 	fontSize = canvasWidth/24;
 	background(255);
 	setInterval(chooseChange, 1000); // change a word every second
@@ -77,8 +80,13 @@ function draw() {
 }
 
 function windowResized() {
-	canvasWidth = windowWidth;
+	if (windowWidth < windowHeight){ // for mobile
+		canvasWidth = windowWidth+(windowWidth/2);
+	}
+	else{
+		canvasWidth = windowWidth;	
+		resizeCanvas(canvasWidth, canvasHeight);
+	}
 	fontSize = canvasWidth/24;
-	resizeCanvas(canvasWidth, canvasHeight);
 	textSize(fontSize);
 }
