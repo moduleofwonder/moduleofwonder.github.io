@@ -27,8 +27,8 @@ function setup() {
 	fontSize = canvasWidth/28;
 	background(255);
 	spacingM = 0;
-	setInterval(chooseChange, 1000); // change a word every second
-	setInterval(MOW, 20000); // show "mow" every 2 minutes(?)
+	setInterval(chooseChange, 800); // change a word every second
+	setInterval(MOW, 8000); // show "mow" every 2 minutes(?)
 	textFont('Arial');
 	textSize(fontSize);
 	fill(255, 186, 21);
