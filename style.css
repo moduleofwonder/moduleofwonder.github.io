@@ -86,3 +86,10 @@ outline: 0;
 width:98%;
 padding-top:10px;
 }
+
+.third{
+	float: left;
+  	width: 31%;
+	padding: 1%;
+	position: relative;
+}
