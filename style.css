@@ -98,3 +98,6 @@ padding-top:10px;
 	display: table;
 	clear: both;
 }
+.row{
+	width: 80%;
+}
